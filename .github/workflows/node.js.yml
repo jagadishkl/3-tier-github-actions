@@ -68,7 +68,7 @@ jobs:
 
   sonar-frontend:
     runs-on: ubuntu-latest
-    needs: gitleaks-scan
+    needs: trivy_fs_scan
 
     steps:
       - name: Checkout code
@@ -89,7 +89,7 @@ jobs:
 
   sonar-backend:
     runs-on: ubuntu-latest
-    needs: gitleaks-scan
+    needs: sonar-frontend
 
     steps:
       - name: Checkout code
